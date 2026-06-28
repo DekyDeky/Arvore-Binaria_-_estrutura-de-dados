@@ -2,7 +2,7 @@ public class Arvore {
     No raiz = null;
 
     public void adicionarNo(int valor){
-        this.raiz = No.adicionar(this.raiz, valor);
+        this.raiz = No.adicionar(this.raiz, valor, null);
     }
 
     public No getRaiz() {
@@ -15,6 +15,7 @@ public class Arvore {
 
     public void varreduraERD(){
         No.erd(this.raiz);
+        System.out.println();
     }
 
     public void varreduraDRE(){
@@ -28,6 +29,19 @@ public class Arvore {
         }else {
             return true;
         }
+    }
+
+    public void getSeguinte(int valor){
+        No atual = No.buscar(this.raiz, valor);
+        No seguinte = No.seguinte(atual);
+
+        if(seguinte == null){
+            System.out.println("Não há valores seguintes!");
+        }else {
+            System.out.println("Valor seguinte: " + seguinte.getValor());
+        }
+
+
     }
 
 
