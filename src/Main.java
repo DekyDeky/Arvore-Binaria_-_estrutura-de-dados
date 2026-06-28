@@ -10,5 +10,7 @@ public class Main {
         arvore.varreduraERD();
         arvore.varreduraDRE();
 
+        System.out.println(arvore.getAltura());
+
     }
 }
