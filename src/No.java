@@ -69,9 +69,9 @@ public class No {
 
     public static void dre(No atual){
         if(atual != null){
-            erd(atual.getDireito());
-            System.out.println(atual.getValor());
-            erd(atual.getEsquerdo());
+            dre(atual.getDireito());
+            System.out.print(atual.getValor() + " - ");
+            dre(atual.getEsquerdo());
         }
     }
 
@@ -101,10 +101,8 @@ public class No {
     public static No seguinte(No atual){
         if(atual.getDireito() != null){
             No seguinte = atual.getDireito();
-            System.out.println(seguinte.getValor());
 
             while (seguinte.getEsquerdo() != null) {
-                System.out.println(seguinte.getValor());
                 seguinte = seguinte.getEsquerdo();
             }
 

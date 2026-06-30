@@ -1,23 +1,67 @@
+import java.util.Scanner;
+
 public class Main {
     static void main() {
+
+        Scanner entrada = new Scanner(System.in);
         Arvore arvore = new Arvore();
+        int valor = 0;
 
-        arvore.adicionarNo(9);
-        arvore.adicionarNo(10);
-        arvore.adicionarNo(15);
-        arvore.adicionarNo(14);
-        arvore.adicionarNo(7);
-        arvore.adicionarNo(8);
-        arvore.adicionarNo(5);
-        arvore.adicionarNo(12);
+        while(true){
+            exibirTela();
+            int numEscolhido = entrada.nextInt();
+            System.out.println();
 
-        //arvore.varreduraERD();
-        //arvore.varreduraDRE();
+            switch (numEscolhido){
+                case 1:
+                    System.out.print("Digite o valor: ");
+                    valor = entrada.nextInt();
+                    arvore.adicionarNo(valor);
+                    break;
+                case 2:
+                    System.out.println("Fazendo varredura ERD...");
+                    arvore.varreduraERD();
+                    break;
+                case 3:
+                    System.out.println("Fazendo varredura DRE");
+                    arvore.varreduraDRE();
+                    break;
+                case 4:
+                    System.out.print("Digite o valor: ");
+                    valor = entrada.nextInt();
+                    arvore.busca(valor);
+                    break;
+                case 5:
+                    System.out.print("Digite o valor: ");
+                    valor = entrada.nextInt();
+                    arvore.getSeguinte(valor);
+                    break;
+                case 6:
+                    System.out.println("Verificando altura...");
+                    System.out.println("Altura da árvore: " + arvore.getAltura());
+                    break;
+                case 0:
+                    System.exit(1);
 
-        //System.out.println(arvore.getAltura());
-        arvore.getSeguinte(15);
-        arvore.getSeguinte(12);
-        arvore.getSeguinte(8);
+        }
+
+        }
 
     }
+
+    public static void exibirTela(){
+        System.out.println("=============================");
+        System.out.println("Árvore Binária");
+        System.out.println("1. Adicionar nó");
+        System.out.println("2. Varredura ERD");
+        System.out.println("3. Varredura DRE");
+        System.out.println("4. Buscar Valor");
+        System.out.println("5. Buscar Valor Seguinte");
+        System.out.println("6. Checar Altura da Árvore");
+        System.out.println("0. Sair");
+        System.out.println("=============================");
+        System.out.print("Digite um valor: ");
+    }
 }
+
+
